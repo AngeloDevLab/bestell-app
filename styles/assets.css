@@ -1,4 +1,3 @@
-
 /* REVIEW - BOX */
 
 .review-box {
@@ -28,4 +27,36 @@
 .average-count {
     font-family: 'Palanquin Dark';
     align-self: flex-end;
+}
+
+/* DISH - CARD */
+
+.dish-card {
+    margin: var(--mobile-spacing);
+    padding: var(--mobile-spacing);
+
+    background-color: var(--asset-primary-color);
+    border-radius: 1rem;
+}
+
+.dish-card img {
+    height: 6rem;
+    width: stretch;
+    border-radius: 1rem;
+
+    object-fit: cover;
+}
+
+.dish-card-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-btn {
+    font-weight: 600;
+    border: none;
+}
+
+.add-btn:hover {
+    background-color: var(--highlight-color);
 }
