@@ -1,0 +1,31 @@
+
+/* REVIEW - BOX */
+
+.review-box {
+    margin: 0 auto;
+    padding: 2px 4px;
+    background-color: var(--highlight-color);
+    height: 1.5rem;
+    width: fit-content;
+    border-radius: 0.5rem;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.review-box svg {
+    height: 1rem;
+
+    stroke: var(--basket-primary-color);
+    fill: var(--basket-primary-color);
+}
+
+.review-count {
+    color: #726D6D;
+}
+
+.average-count {
+    font-family: 'Palanquin Dark';
+    align-self: flex-end;
+}

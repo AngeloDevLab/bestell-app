@@ -1,0 +1,71 @@
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #E76C1F;
+    --asset-primary-color: #FDEADC;
+    --basket-primary-color: #363534;
+    --highlight-color: #FACAAC;
+    --mobile-spacing: 1rem;
+    --tablet-spacing: 2rem;
+    --desktop-spacing: 4rem;
+}
+
+html {
+    font-size: 16px;
+
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--primary-color);
+    color: #000000;
+    font-family: 'Palanquin';
+}
+
+p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+h1 {
+    font-family: 'Palanquin Dark';
+    font-size: 40px;
+
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-family: 'Palanquin';
+    font-size: 1rem;
+}
+
+svg {
+    height: 2rem;
+    width: 2rem;
+
+    stroke: var(--primary-color);
+}
+
+header {
+    background-color: var(--secondary-color);
+    height: 4rem;
+
+    display: flex;
+    align-items: center;
+}
+
+main {
+    min-height: calc(100vh - 8rem);
+}
+
+footer {
+    background-color: var(--secondary-color);
+    height: 4rem;
+
+    display: flex;
+    align-items: center;
+}
