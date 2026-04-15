@@ -34,6 +34,8 @@ body {
     background-color: var(--primary-color);
     color: #363534;
     font-family: 'Palanquin';
+
+    overflow-x: hidden;
 }
 
 p {
@@ -102,7 +104,11 @@ header {
 }
 
 main {
-    min-height: calc(100vh - 8rem);
+    margin-top: -4rem;
+    padding-top: 4rem;
+
+    position: relative;
+    display: flex;
 }
 
 footer {

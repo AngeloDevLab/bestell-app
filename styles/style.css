@@ -35,8 +35,28 @@
 
 
 
+.main-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+}
+
+.basket-section {
+    position: absolute;
+    top: -4rem;
+    right: 0;
+
+    height: 100%;
+    width: 100%;
+}
+
+
+
 .hero {
     height: calc(100vh - 4rem);
+    position: relative;
 }
 
 .hero-content {
@@ -130,6 +150,7 @@
 
     gap: 1rem;
 }
+
 .categorie-content nav {
     display: flex;
     gap: 0.5rem;
