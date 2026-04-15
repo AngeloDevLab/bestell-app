@@ -1,0 +1,36 @@
+/* mobile per default */
+
+/* TABLET */
+@media (min-width: 768px) {
+
+    .hero-images {
+        padding: 0;
+    }
+
+    .hero-img {
+        border-radius: 0;
+    }
+
+    .outer-logo-ring {
+        bottom: 0.5rem;
+    }
+
+    .hero-content {
+        padding-top: 4rem;
+    }
+
+    .hero-review-and-title {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+
+        gap: clamp(1rem, 4vw, 4rem);
+    }
+
+    .review-box {
+        margin-top: 0.5rem;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {}

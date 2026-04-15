@@ -32,8 +32,11 @@
 /* DISH - CARD */
 
 .dish-card {
-    margin: var(--mobile-spacing);
-    padding: var(--mobile-spacing);
+    margin: 1rem;
+    margin-left: clamp(1rem, 4vw, 4rem);
+    padding: 1rem;
+
+    max-width: 32rem;
 
     background-color: var(--asset-primary-color);
     border-radius: 1rem;
@@ -59,4 +62,35 @@
 
 .add-btn:hover {
     background-color: var(--highlight-color);
+}
+
+/* BASKET */
+
+.basket-section {
+    position: fixed;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.basket-svg-bg {
+    height: 3rem;
+    width: 3rem;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.basket svg {
+    height: 2rem;
+    width: 2rem;
+    stroke: var(--primary-color);
+}
+
+.basket {
+    height: 100%;
+    width: 100%;
+    max-width: 300px;
 }

@@ -4,9 +4,22 @@
     --asset-primary-color: #FDEADC;
     --basket-primary-color: #363534;
     --highlight-color: #FACAAC;
-    --mobile-spacing: 1rem;
-    --tablet-spacing: 2rem;
-    --desktop-spacing: 4rem;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--asset-primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--highlight-color);
 }
 
 html {
