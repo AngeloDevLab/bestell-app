@@ -3,6 +3,12 @@
 /* TABLET */
 @media (min-width: 768px) {
 
+    .basket-section {
+        height: 100%;
+        width: 200px;
+    }
+
+
     .hero-images {
         padding: 0;
     }
