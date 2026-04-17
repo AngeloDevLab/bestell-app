@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bestell App</title>
 
+    <link rel="icon" type="image/x-icon" href="./assets/icons/shopping-cart.svg">
+
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/standard.css">
     <link rel="stylesheet" href="./styles/assets.css">
     <link rel="stylesheet" href="./styles/fonts.css">
     <link rel="stylesheet" href="./styles/responsive.css">
 
-
+    <script src="./scripts/main.js" defer></script>
+    <script src="./scripts/template.js"></script>
+    <script src="./scripts/menu.js"></script>
 
 </head>
 
@@ -26,92 +30,70 @@
 
     <main>
 
-        <div class="main-content">
-            <section class="hero">
+        <section class="hero">
 
-                <div class="hero-images">
-                    <img class="hero-img" src="./assets/images/hero.jpg" alt="Burger und Pommes Bild">
-                    <div class="outer-logo-ring">
-                        <img class="hero-logo-img" src="./assets/images/hero-urban-bites-logo.png"
-                            alt="urban bites logo">
-                    </div>
-
+            <div class="hero-images">
+                <img class="hero-img" src="./assets/images/hero.jpg" alt="Burger und Pommes Bild">
+                <div class="outer-logo-ring">
+                    <img class="hero-logo-img" src="./assets/images/hero-urban-bites-logo.png" alt="urban bites logo">
                 </div>
 
-                <div class="hero-content">
+            </div>
 
-                    <div class="hero-review-and-title">
-                        <div class="review-box">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="lucide lucide-star-icon lucide-star">
-                                <path
-                                    d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
-                            </svg>
+            <div class="hero-content">
 
-                            <p class="average-count">4,3</p>
-                            <p class="review-count">(132)</p>
-                        </div>
-
-                        <h1><span>Urban</span>Bites</h1>
-
-                    </div>
-
-                    <p class="sub-title">The best fingerfood in town.</p>
-
-                    <div class="order-now">
-                        <p>Jetzt Bestellen</p>
-
-                        <svg class="order-chevron-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down">
-                            <path d="m6 9 6 6 6-6" />
+                <div class="hero-review-and-title">
+                    <div class="review-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-star-icon lucide-star">
+                            <path
+                                d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
                         </svg>
+
+                        <p class="average-count">4,3</p>
+                        <p class="review-count">(132)</p>
                     </div>
+
+                    <h1><span>Urban</span>Bites</h1>
 
                 </div>
 
+                <p class="sub-title">The best fingerfood in town.</p>
 
+                <div class="order-now">
+                    <p>Jetzt Bestellen</p>
 
-            </section>
-
-            <section class="categorie-navigation">
-                <div class="categorie-content">
-
-                    <img src="./assets/icons/categories/categories.png" alt="Burger Icon">
-                    <h2>Kategorien</h2>
-
-                    <nav>
-                        <a href="#">Burger</a>
-                        <a href="#">Sides</a>
-                        <a href="#">Snacks</a>
-                        <a href="#">Drinks</a>
-                    </nav>
-                </div>
-            </section>
-
-            <section class="dish-categories">
-
-                <header>
-                    <div class="dish-header-content max-content">
-                        <img src="./assets/icons/categories/hamburger.png" alt="Burger Icon">
-                        <h2>Burger</h2>
-                    </div>
-                </header>
-
-                <div class="dish-card">
-                    <img src="./assets/images/burgers/classic-burger.jpg" alt="Classic Burger Bild">
-                    <h3>Burger</h3>
-                    <p>Salat, Sauce, Beef, Tomaten, Zwiebel, Bacon</p>
-
-                    <div class="dish-card-footer">
-                        <p class="price-text">16,90€</p>
-                        <button class="add-btn">Hinzufügen</button>
-                    </div>
+                    <svg class="order-chevron-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-chevron-down-icon lucide-chevron-down">
+                        <path d="m6 9 6 6 6-6" />
+                    </svg>
                 </div>
 
-            </section>
-        </div>
+            </div>
+
+
+
+        </section>
+
+        <section class="categorie-navigation">
+            <div class="categorie-content max-content">
+
+                <img src="./assets/icons/categories/categories.png" alt="Burger Icon">
+                <h2>Kategorien</h2>
+
+                <nav>
+                    <a href="#burger">Burger</a>
+                    <a href="#sides">Sides</a>
+                    <a href="#snacks">Snacks</a>
+                    <a href="#drinks">Drinks</a>
+                </nav>
+            </div>
+        </section>
+
+        <section id="menu" class="dish-categories">
+        </section>
 
         <section class="basket-section">
 
@@ -141,26 +123,58 @@
                     <h3>Deine Bestellung</h3>
 
                     <div class="basket-items">
-                        <!-- <div class="is-empty-card">
-                            <p>Dein Warenkorb ist leer.
-                                <br>Zeit etwas zu Bestellen.
-                            </p>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="lucide lucide-shopping-cart-icon lucide-shopping-cart">
-                                <circle cx="8" cy="21" r="1" />
-                                <circle cx="19" cy="21" r="1" />
-                                <path
-                                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
-                            </svg>
-                        </div> -->
-
+                        
                         <div class="basket-card">
                             <p>1 x Burger mit Allem und etwas mehr</p>
 
                             <div class="amount-container">
 
+                                <div class="amount-controller">
+                                    <button class="svg-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2">
+                                            <path d="M10 11v6" />
+                                            <path d="M14 11v6" />
+                                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+                                            <path d="M3 6h18" />
+                                            <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                        </svg>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            class="lucide lucide-circle-minus-icon lucide-circle-minus hidden">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <path d="M8 12h8" />
+                                        </svg>
+                                    </button>
+
+                                    <p>1</p>
+
+                                    <button class="svg-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            class="lucide lucide-circle-plus-icon lucide-circle-plus">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <path d="M8 12h8" />
+                                            <path d="M12 8v8" />
+                                        </svg>
+                                    </button>
+                                </div>
+
+
+                                <p>14,30€</p>
+                            </div>
+
+                        </div>
+
+                        <div class="basket-card">
+                            <p>1 x Burger mit Allem</p>
+
+                            <div class="amount-container">
+
                                 <button class="svg-btn">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -175,7 +189,7 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round"
-                                        class="lucide lucide-circle-minus-icon lucide-circle-minus">
+                                        class="lucide lucide-circle-minus-icon lucide-circle-minus hidden">
                                         <circle cx="12" cy="12" r="10" />
                                         <path d="M8 12h8" />
                                     </svg>
@@ -218,7 +232,7 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round"
-                                        class="lucide lucide-circle-minus-icon lucide-circle-minus">
+                                        class="lucide lucide-circle-minus-icon lucide-circle-minus hidden">
                                         <circle cx="12" cy="12" r="10" />
                                         <path d="M8 12h8" />
                                     </svg>
@@ -261,7 +275,7 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round"
-                                        class="lucide lucide-circle-minus-icon lucide-circle-minus">
+                                        class="lucide lucide-circle-minus-icon lucide-circle-minus hidden">
                                         <circle cx="12" cy="12" r="10" />
                                         <path d="M8 12h8" />
                                     </svg>
@@ -304,50 +318,7 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round"
-                                        class="lucide lucide-circle-minus-icon lucide-circle-minus">
-                                        <circle cx="12" cy="12" r="10" />
-                                        <path d="M8 12h8" />
-                                    </svg>
-                                </button>
-
-                                <p>1</p>
-
-                                <button class="svg-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="lucide lucide-circle-plus-icon lucide-circle-plus">
-                                        <circle cx="12" cy="12" r="10" />
-                                        <path d="M8 12h8" />
-                                        <path d="M12 8v8" />
-                                    </svg>
-                                </button>
-
-                                <p>14,30€</p>
-                            </div>
-
-                        </div>
-
-                        <div class="basket-card">
-                            <p>1 x Burger mit Allem</p>
-
-                            <div class="amount-container">
-
-                                <button class="svg-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2">
-                                        <path d="M10 11v6" />
-                                        <path d="M14 11v6" />
-                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
-                                        <path d="M3 6h18" />
-                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-                                    </svg>
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="lucide lucide-circle-minus-icon lucide-circle-minus">
+                                        class="lucide lucide-circle-minus-icon lucide-circle-minus hidden">
                                         <circle cx="12" cy="12" r="10" />
                                         <path d="M8 12h8" />
                                     </svg>
@@ -374,20 +345,27 @@
 
                     <div class="basket-footer">
 
-                        
+                        <div class="subtotal">
+                            <p>Zwischensumme</p>
+                            <p>xx,Xx€</p>
+                        </div>
+
+                        <div class="delivery-fee">
+                            <p>Lieferkosten</p>
+                            <p>0,99€</p>
+                        </div>
+
+                        <hr>
+
+                        <div class="total">
+                            <p>Gesamt</p>
+                            <p>123,45€</p>
+                        </div>
+
+                        <button class="order-btn">Jetzt Bestellen</button>
 
                     </div>
-
-
-
-
-
                 </div>
-
-
-
-
-
             </div>
 
         </section>
@@ -420,7 +398,7 @@
     </footer>
 
 
-    <script src="./scripts/main.js"></script>
+
 </body>
 
 </html>

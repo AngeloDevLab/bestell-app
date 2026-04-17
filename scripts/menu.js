@@ -35,35 +35,35 @@ const menu = [
     // SIDES
     {
         id: 5,
-        name: "Wedges Small",
-        category: "sides",
-        price: 3.5,
-        image: "wedges.jpg",
-        description: "Knusprige Kartoffelspalten"
-    },
-    {
-        id: 6,
-        name: "Wedges Large",
-        category: "sides",
-        price: 5.0,
-        image: "wedges.jpg",
-        description: "Große Portion knuspriger Kartoffelspalten"
-    },
-    {
-        id: 7,
-        name: "Fries Small",
+        name: "Pommes Frites klein",
         category: "sides",
         price: 3.0,
         image: "pommes.jpg",
         description: "Kleine Portion Pommes"
     },
     {
-        id: 8,
-        name: "Fries Large",
+        id: 6,
+        name: "Pommes Frites groß",
         category: "sides",
         price: 4.5,
         image: "pommes.jpg",
         description: "Große Portion Pommes"
+    },
+    {
+        id: 7,
+        name: "Kartoffel Wedges klein",
+        category: "sides",
+        price: 3.5,
+        image: "wedges.jpg",
+        description: "Knusprige Kartoffelspalten"
+    },
+    {
+        id: 8,
+        name: "Kartoffel Wedges groß",
+        category: "sides",
+        price: 5.0,
+        image: "wedges.jpg",
+        description: "Große Portion knuspriger Kartoffelspalten"
     },
     // SNACKS
     {

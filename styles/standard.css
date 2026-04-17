@@ -34,8 +34,6 @@ body {
     background-color: var(--primary-color);
     color: #363534;
     font-family: 'Palanquin';
-
-    overflow-x: hidden;
 }
 
 p {
@@ -78,6 +76,11 @@ a {
     font-size: 1rem;
 }
 
+a:hover {
+    transform: scale(1.2);
+    text-decoration: underline;
+}
+
 svg {
     height: 2rem;
     width: 2rem;
@@ -101,14 +104,6 @@ header {
 
     display: flex;
     align-items: center;
-}
-
-main {
-    margin-top: -4rem;
-    padding-top: 4rem;
-
-    position: relative;
-    display: flex;
 }
 
 footer {

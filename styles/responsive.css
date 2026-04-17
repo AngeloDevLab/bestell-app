@@ -3,12 +3,6 @@
 /* TABLET */
 @media (min-width: 768px) {
 
-    .basket-section {
-        height: 100%;
-        width: 200px;
-    }
-
-
     .hero-images {
         padding: 0;
     }
@@ -35,6 +29,32 @@
 
     .review-box {
         margin-top: 0.5rem;
+    }
+
+    .dish-card {
+        display: flex;
+        justify-content: space-between;
+
+        gap: 1rem;
+    }
+
+    .dish-card img {
+        height: 12rem;
+        width: 12rem;
+    }
+
+    .dish-image-and-text-container {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .dish-card-footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .basket-content {
+        width: 30rem;
     }
 }
 
