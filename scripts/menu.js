@@ -102,7 +102,7 @@ const menu = [
         id: 13,
         name: "Chicken Box",
         category: "snacks",
-        price: 9.0,
+        price: 13.7,
         image: "chicken-box.jpg",
         description: "Mix aus Nuggets, Wings und Pommes"
     },
@@ -133,7 +133,7 @@ const menu = [
     },
     {
         id: 17,
-        name: "Water",
+        name: "Wasser",
         category: "drinks",
         price: 2.0,
         image: "soda.jpg",

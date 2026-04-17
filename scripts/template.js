@@ -51,3 +51,91 @@ function getEmptyBasketTemplate() {
         </div>
     `;
 }
+
+function getBasketItemTemplate(item, decreaseIcon) {
+    return `
+        <div class="basket-card">
+            <p>${item.amount} x ${item.name}</p>
+
+            <div class="amount-container">
+
+                <div class="amount-controller">
+                    <button class="svg-btn" data-id="${item.id}" data-action="decrease"
+>
+                        ${decreaseIcon}
+                    </button>
+
+                    <p>${item.amount}</p>
+
+                    <button class="svg-btn" data-id="${item.id}" data-action="increase">
+                        ${getPlusIcon()}
+                    </button>
+                </div>
+
+
+                <p>${parseNumberToCurrencyEuro(item.price * item.amount)}</p>
+            </div>
+
+        </div>
+    `;
+}
+
+function getTrashIcon() {
+    return `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M10 11v6" />
+            <path d="M14 11v6" />
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+            <path d="M3 6h18" />
+            <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+        </svg>
+    `;
+}
+
+function getMinusIcon() {
+    return `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M8 12h8" />
+        </svg>
+    `;
+}
+
+function getPlusIcon() {
+    return `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M8 12h8" />
+            <path d="M12 8v8" />
+        </svg>
+    `;
+}
+
+function getBasketFooterTemplate(calculation) {
+    return `
+        <div class="subtotal">
+            <p>Zwischensumme</p>
+            <p>${parseNumberToCurrencyEuro(calculation.subtotal)}</p>
+        </div>
+
+        <div class="delivery-fee">
+            <p>Lieferkosten</p>
+            <p>${parseNumberToCurrencyEuro(calculation.deliveryFee)}</p>
+        </div>
+
+        <hr>
+
+        <div class="total">
+            <p>Gesamt</p>
+            <p>${parseNumberToCurrencyEuro(calculation.total)}</p>
+        </div>
+
+        <button id="order-btn" class="order-btn">Jetzt Bestellen</button>
+    `;
+}

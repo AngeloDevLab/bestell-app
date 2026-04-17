@@ -236,6 +236,7 @@
 }
 
 .basket-items {
+    width: clamp(16rem, 90%, 20rem);
     display: flex;
     flex-direction: column;
     margin: 0 1rem;
@@ -246,6 +247,10 @@
     max-height: 50vh;
 
     gap: 0.5rem;
+}
+
+.basket-items.empty {
+    align-self: center;
 }
 
 .basket-footer {
