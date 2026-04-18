@@ -16,7 +16,7 @@ function getCategoryHeaderTemplate(category) {
     `;
 }
 
-function getDishTemplate(item) {
+function getDishTemplate(item, amount) {
     return `
         <div class="dish-card">
 
@@ -30,7 +30,11 @@ function getDishTemplate(item) {
 
             <div class="dish-card-footer">
                 <p class="price-text">${parseNumberToCurrencyEuro(item.price)}</p>
-                <button class="add-btn" data-id="${item.id}">Hinzufügen</button>
+                <button class="add-btn" data-id="${item.id}">
+                        ${amount > 0
+            ? `<span class="button-badge">${getShoppingIcon()} ${amount}</span>`
+            : "Hinzufügen"}
+                </button>
             </div>
         </div>
     `;
@@ -113,6 +117,18 @@ function getPlusIcon() {
             <circle cx="12" cy="12" r="10" />
             <path d="M8 12h8" />
             <path d="M12 8v8" />
+        </svg>
+    `;
+}
+
+function getShoppingIcon() {
+    return `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
+            <circle cx="8" cy="21" r="1" />
+            <circle cx="19" cy="21" r="1" />
+            <path
+                d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
         </svg>
     `;
 }

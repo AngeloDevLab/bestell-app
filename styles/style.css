@@ -1,3 +1,5 @@
+
+/* ================== GENERICS ================== */
 .max-content {
     padding: 0 max(calc(50% - 720px), clamp(1rem, 4vw, 4rem));
 }
@@ -7,7 +9,7 @@
 }
 
 
-
+/* ================== IMPRESSUM ================== */
 .impressum-main {
     padding: 1rem;
 }
@@ -17,7 +19,7 @@
 }
 
 
-
+/* ================== HEADER ================== */
 .header-content {
     display: flex;
     align-items: center;
@@ -27,10 +29,7 @@
     height: 2rem;
 }
 
-
-
-
-
+/* ================== HERO ================== */
 .hero {
     height: calc(100vh - 4rem);
     position: relative;
@@ -109,7 +108,7 @@
 }
 
 
-
+/* ================== MENU CATEGORIES ================== */
 .categorie-navigation {
     margin: 4rem 0;
     background-color: var(--secondary-color);
@@ -156,11 +155,7 @@
 }
 
 
-
-
-
-
-
+/* ================== FOOTER ================== */
 .footer-content {
     width: 100%;
 
@@ -189,8 +184,7 @@
 }
 
 
-
-
+/* ================== DIALOG ================== */
 .dialog-content {
     background: var(--basket-primary-color);
     color: var(--asset-primary-color);

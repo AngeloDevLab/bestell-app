@@ -1,14 +1,15 @@
 
 
+
+
 // ================== GLOBALS / SETUP ==================
 const toggleBasketBtn = document.getElementById("toggle-basket");
-
 const MenuContainer = document.getElementById("menu");
-const categories = ["burger", "sides", "snacks", "drinks"];
-
 const basketContent = document.getElementById("basket-content");
 const basketItems = document.getElementById("basket-items");
 const basketFooter = document.getElementById("basket-footer");
+
+const categories = ["burger", "sides", "snacks", "drinks"];
 
 let euro = Intl.NumberFormat('de-DE', {
     style: 'currency',
@@ -18,11 +19,14 @@ let euro = Intl.NumberFormat('de-DE', {
 let basket = [];
 
 
+
+
 // ================== INIT ==================
 function Init() {
-    renderMenu();
-    renderBasket();
+    updateUI();
 }
+
+
 
 
 // ================== RENDER ==================
@@ -45,14 +49,15 @@ function buildCategoryItems() {
         const items = menu.filter(item => item.category === category);
 
         items.forEach(item => {
-            list.innerHTML += getDishTemplate(item);
+            const amount = getItemAmount(item.id);
+            list.innerHTML += getDishTemplate(item, amount);
         });
     });
 }
 
 function renderBasket() {
-
     basketItems.classList.remove("empty");
+
     if (basket.length === 0) {
         basketItems.classList.add("empty");
         renderEmptyBasket();
@@ -78,13 +83,7 @@ function renderFullBasket() {
     basketFooter.innerHTML = getBasketFooterTemplate(calculation);
 }
 
-function getDecreaseIcon(amount) {
-    if (amount === 1) {
-        return getTrashIcon();
-    }
 
-    return getMinusIcon();
-}
 
 
 // ================== CALC ==================
@@ -104,13 +103,32 @@ function calculateBasket() {
 }
 
 
+
+
 // ================== BASKET LOGIC ==================
 function addToBasket(id) {
-    const item = menu.find(i => i.id == id);
-    const existingItem = basket.find(i => i.id == id);
+    addOrIncreaseItem(id);
+    updateUI();
+}
 
-    if (existingItem) {
-        existingItem.amount++;
+function handleBasketAction(id, action) {
+    if (action === "increase") {
+        addOrIncreaseItem(id);
+    }
+
+    if (action === "decrease") {
+        decreaseOrRemoveItem(id);
+    }
+
+    updateUI();
+}
+
+function addOrIncreaseItem(id) {
+    const item = menu.find(i => i.id == id);
+    const existing = basket.find(i => i.id == id);
+
+    if (existing) {
+        existing.amount++;
     } else {
         basket.push({
             id: item.id,
@@ -119,35 +137,44 @@ function addToBasket(id) {
             amount: 1
         });
     }
-    renderBasket();
 }
 
-function handleBasketAction(id, action) {
-    let item = basket.find(i => i.id == id);
+function decreaseOrRemoveItem(id) {
+    const item = basket.find(i => i.id == id);
     if (!item) return;
 
-    if (action === "increase") {
-        item.amount++;
+    if (item.amount === 1) {
+        basket = basket.filter(i => i.id != id);
+    } else {
+        item.amount--;
     }
+}
 
-    if (action === "decrease") {
-        if (item.amount === 1) {
-            basket = basket.filter(i => i.id != id);
-        } else {
-            item.amount--;
-        }
+function updateBasketCount() {
+    const count = basket.reduce((sum, item) => sum + item.amount, 0);
+    const badge = document.getElementById("basket-count");
+
+    badge.innerText = count;
+
+    if (count > 0) {
+        badge.classList.remove("hidden");
+        badge.classList.add("pop");
+        setTimeout(() => badge.classList.remove("pop"), 200);
+    } else {
+        badge.classList.add("hidden");
     }
-
-    renderBasket();
 }
 
 function submitOrder() {
-    toggleBasket();
     // saveLastOrder(); // optional
     basket = [];
-    renderBasket();
+
+    toggleBasket();
+    updateUI();
     showOrderDialog();
 }
+
+
 
 
 // ================== UI ==================
@@ -160,7 +187,11 @@ function showOrderDialog() {
     document.getElementById("order-dialog").showModal();
 }
 
-
+function updateUI() {
+    renderMenu();
+    renderBasket();
+    updateBasketCount();
+}
 
 
 // ================== HELPERS ==================
@@ -172,9 +203,25 @@ function parseNumberToCurrencyEuro(number) {
     return euro.format(number);
 }
 
+function getDecreaseIcon(amount) {
+    if (amount === 1) {
+        return getTrashIcon();
+    }
+
+    return getMinusIcon();
+}
+
+function getItemAmount(id) {
+    const basketItem = basket.find(i => i.id == id);
+    return basketItem ? basketItem.amount : 0;
+}
+
+
+
 
 // ================== EVENTS ==================
 window.addEventListener("load", Init)
+
 toggleBasketBtn.addEventListener("click", toggleBasket);
 
 document.getElementById("close-dialog-btn").addEventListener("click", () => {
@@ -189,7 +236,6 @@ document.addEventListener("click", (e) => {
 
 document.addEventListener("click", (e) => {
     const button = e.target.closest(".add-btn");
-
     if (!button) return;
 
     const id = button.dataset.id;
