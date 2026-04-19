@@ -168,6 +168,8 @@
     padding: 2px 6px;
     border-radius: 50%;
 
+    color: var(--basket-primary-color);
+
     transition: transform 0.2s ease;
 
     pointer-events: none;
@@ -383,6 +385,7 @@
 }
 
 .basket-footer {
+    width: 16rem;
     margin: 0 1rem;
     margin-bottom: 1rem;
 
