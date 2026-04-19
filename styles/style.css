@@ -25,6 +25,10 @@
     align-items: center;
 }
 
+.header-content a:hover {
+    transform: scale(1);
+}
+
 .header-logo {
     height: 2rem;
 }
