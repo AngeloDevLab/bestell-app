@@ -1,4 +1,3 @@
-
 function getCategoryHeaderTemplate(category) {
     return `
         <section class="dish-categories" id="${category}">

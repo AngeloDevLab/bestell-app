@@ -1,7 +1,3 @@
-
-
-
-
 // ================== GLOBALS / SETUP ==================
 const toggleBasketBtn = document.getElementById("toggle-basket");
 const MenuContainer = document.getElementById("menu");
@@ -24,16 +20,10 @@ let euro = Intl.NumberFormat('de-DE', {
 
 let basket = [];
 
-
-
-
 // ================== INIT ==================
 function Init() {
     updateUI();
 }
-
-
-
 
 // ================== RENDER ==================
 function renderMenu() {
@@ -89,9 +79,6 @@ function renderFullBasket() {
     const calculation = calculateBasket();
     basketFooter.innerHTML = getBasketFooterTemplate(calculation);
 }
-
-
-
 
 // ================== CALC ==================
 function calculateBasket() {
@@ -180,16 +167,12 @@ function updateBasketCount() {
 }
 
 function submitOrder() {
-    // saveLastOrder(); // optional
     basket = [];
 
     toggleBasket();
     updateUI();
     showOrderDialog();
 }
-
-
-
 
 // ================== UI ==================
 function toggleBasket() {
@@ -206,7 +189,6 @@ function updateUI() {
     renderBasket();
     updateBasketCount();
 }
-
 
 // ================== HELPERS ==================
 function capitalize(text) {
@@ -229,9 +211,6 @@ function getItemAmount(id) {
     const basketItem = basket.find(i => i.id == id);
     return basketItem ? basketItem.amount : 0;
 }
-
-
-
 
 // ================== EVENTS ==================
 window.addEventListener("load", Init)
@@ -266,10 +245,6 @@ basketItems.addEventListener("click", (e) => {
 
     handleBasketAction(id, action);
 });
-
-
-
-
 
 deliveryToggle.addEventListener("click", () => {
     deliveryMode = deliveryMode === "delivery" ? "pickup" : "delivery";

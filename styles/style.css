@@ -1,4 +1,3 @@
-
 /* ================== GENERICS ================== */
 .max-content {
     padding: 0 max(calc(50% - 720px), clamp(1rem, 4vw, 4rem));
