@@ -8,8 +8,14 @@ const MenuContainer = document.getElementById("menu");
 const basketContent = document.getElementById("basket-content");
 const basketItems = document.getElementById("basket-items");
 const basketFooter = document.getElementById("basket-footer");
+const deliveryToggle = document.getElementById("delivery-toggle");
 
 const categories = ["burger", "sides", "snacks", "drinks"];
+
+const FREE_DELIVERY_THRESHOLD = 50;
+const DELIVERY_FEE = 0.99;
+
+let deliveryMode = "delivery";
 
 let euro = Intl.NumberFormat('de-DE', {
     style: 'currency',
@@ -68,7 +74,8 @@ function renderBasket() {
 
 function renderEmptyBasket() {
     basketItems.innerHTML = getEmptyBasketTemplate();
-    basketFooter.innerHTML = "";
+    const calculation = calculateBasket();
+    basketFooter.innerHTML = getBasketFooterTemplate(calculation);
 }
 
 function renderFullBasket() {
@@ -88,22 +95,29 @@ function renderFullBasket() {
 
 // ================== CALC ==================
 function calculateBasket() {
-    const subtotal = basket.reduce((sum, item) => {
-        return sum + item.price * item.amount;
-    }, 0);
+    const subtotal = basket.reduce((sum, item) => sum + item.price * item.amount, 0);
 
-    const deliveryFee = 0.99; // später dynamisch
+    const isPickup = deliveryMode === "pickup";
+    const isFreeDelivery = !isPickup && subtotal >= FREE_DELIVERY_THRESHOLD && subtotal > 0;
+
+    const deliveryFee = isPickup
+        ? 0
+        : isFreeDelivery
+            ? 0
+            : 0.99;
+
     const total = subtotal + deliveryFee;
+    const missingForFree = Math.max(0, FREE_DELIVERY_THRESHOLD - subtotal);
 
     return {
         subtotal,
         deliveryFee,
-        total
+        total,
+        isFreeDelivery,
+        isPickup,
+        missingForFree
     };
 }
-
-
-
 
 // ================== BASKET LOGIC ==================
 function addToBasket(id) {
@@ -255,3 +269,15 @@ basketItems.addEventListener("click", (e) => {
 
 
 
+
+
+deliveryToggle.addEventListener("click", () => {
+    deliveryMode = deliveryMode === "delivery" ? "pickup" : "delivery";
+
+    document.querySelectorAll(".text").forEach(t => t.classList.remove("active"));
+    document.querySelector(`.${deliveryMode}`).classList.add("active");
+
+    deliveryToggle.classList.toggle("pickup", deliveryMode === "pickup");
+
+    renderBasket();
+});

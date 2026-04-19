@@ -1,4 +1,4 @@
-/* SVG BUTTON */
+/* ================== SVG BUTTON ================== */
 
 .svg-btn {
     margin: 0;
@@ -12,7 +12,7 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-/* REVIEW - BOX */
+/* ================== REVIEW BOX ================== */
 
 .review-box {
     margin: 0 auto;
@@ -228,11 +228,85 @@
     display: flex;
     flex-direction: column;
     align-items: end;
-    gap: 1rem;
+    gap: 0.5rem;
 
     opacity: 0;
     transform: scale(0.6) translate(50%, -50%);
     transition: opacity 0.2s ease, transform 0.25s ease;
+}
+
+.delivery-toggle-button {
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+
+    border: 2px solid var(--highlight-color);
+
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.delivery-toggle-button svg {
+    height: 1.5rem;
+    width: 1.5rem;
+
+    margin-left: 8px;
+    margin-right: 8px;
+
+    stroke: var(--primary-color);
+
+    z-index: 1;
+}
+
+.highlight {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    width: 8rem;
+    height: 2rem;
+
+    background-color: var(--secondary-color);
+    border-radius: 1rem;
+
+    transition: transform 0.25s ease;
+    pointer-events: none;
+}
+
+.delivery-toggle-button.pickup .highlight {
+    transform: translate(3rem, -50%);
+}
+
+.text-wrapper {
+    position: relative;
+    height: 1rem;
+    width: 6rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    position: absolute;
+    transition: 0.25s ease;
+
+
+    font-weight: bold;
+    color: var(--primary-color);
+
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.text.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.highlight.active {
+    transform: translateY(100%);
 }
 
 .basket-content h3 {
@@ -247,7 +321,7 @@
 }
 
 .is-empty-card {
-    padding: 4rem 0;
+    padding: 2rem 0;
 
     display: flex;
     flex-direction: column;
@@ -315,6 +389,12 @@
     display: flex;
     flex-direction: column;
     align-items: end;
+}
+
+.delivery-info {
+    font-size: 14px;
+    color: var(--highlight-color);
+    margin-top: 0.5rem;
 }
 
 .subtotal,

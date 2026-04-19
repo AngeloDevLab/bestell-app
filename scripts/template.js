@@ -141,8 +141,17 @@ function getBasketFooterTemplate(calculation) {
         </div>
 
         <div class="delivery-fee">
-            <p>Lieferkosten</p>
-            <p>${parseNumberToCurrencyEuro(calculation.deliveryFee)}</p>
+            <p>${deliveryMode === "pickup" ? "Abholung" : "Lieferkosten"}</p>
+            <p>${deliveryMode === "pickup" ? "0,00 €" : parseNumberToCurrencyEuro(calculation.deliveryFee)}</p>
+        </div>
+
+        <div class="delivery-info">
+            ${deliveryMode === "pickup" 
+                ? "Abholung kostenlos" 
+                : calculation.isFreeDelivery 
+                    ? "Kostenlose Lieferung"
+                    : `Noch ${parseNumberToCurrencyEuro(calculation.missingForFree)} bis kostenlose Lieferung`
+            }
         </div>
 
         <hr>
@@ -152,6 +161,6 @@ function getBasketFooterTemplate(calculation) {
             <p>${parseNumberToCurrencyEuro(calculation.total)}</p>
         </div>
 
-        <button id="order-btn" class="order-btn">Jetzt Bestellen</button>
+        <button id="order-btn" class="order-btn" ${basket.length === 0 ? "disabled" : ""}>Jetzt Bestellen</button>
     `;
 }
